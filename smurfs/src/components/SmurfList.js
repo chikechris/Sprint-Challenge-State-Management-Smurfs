@@ -9,13 +9,14 @@ function SmufList(props) {
   });
   return (
     <div>
-      <h3> Smurfs</h3>
+      <h1> Smurfs</h1>
       {props.smurfs &&
-        props.smurfs.map(smurf => {
+        props.smurfs.map((smurf, id) => {
           return (
-            <div className="smurfCard">
-              <h3>{smurf.name}</h3>
-              <h3> {smurf.age} </h3>
+            <div className="smurfCard" key={id}>
+              <h3>Name: {smurf.name}</h3>
+              <h3>Age: {smurf.age} </h3>
+              <h3>Height: {smurf.height} </h3>
             </div>
           );
         })}
