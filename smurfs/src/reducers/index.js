@@ -1,12 +1,15 @@
 import {
   FETCH_SMURFS_START,
   FETCH_SMURFS_SUCCESS,
-  FETCH_SMURFS_FAILURE
+  FETCH_SMURFS_FAILURE,
+  POST_SMURFS_START,
+  POST_SMURFS_SUCCESS,
+  POST_SMURFS_FAILURE
 } from "../actions";
 
 const inititalState = {
   smurfs: [],
-  isLoading: false,
+  success: "",
   error: ""
 };
 
@@ -15,20 +18,42 @@ const reducer = (state = inititalState, action) => {
     case FETCH_SMURFS_START:
       return {
         ...state,
-        isLoading: true
+        success: "",
+        error: ""
       };
     case FETCH_SMURFS_SUCCESS:
       return {
         ...state,
-        isLoading: false,
-        smurfs: action.payload
+
+        smurfs: action.payload,
+        success: "",
+        error: ""
       };
     case FETCH_SMURFS_FAILURE:
       return {
         ...state,
-        isLoading: false,
+        success: state.success,
         error: "Cant load smurfs!!!!"
       };
+    case POST_SMURFS_START:
+      return {
+        ...state,
+        success: "",
+        error: ""
+      };
+    case POST_SMURFS_SUCCESS:
+      return {
+        ...state,
+        success: action.payload,
+        error: ""
+      };
+    case POST_SMURFS_FAILURE:
+      return {
+        ...state,
+        success: "",
+        error: "Cant post smurfs!!!!"
+      };
+
     default:
       return state;
   }
