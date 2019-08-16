@@ -3,7 +3,7 @@ import React from "react";
 const SmurfForm = () => {
   return (
     <div>
-      <h2>Smurf</h2>
+      <h2>Smurform</h2>
     </div>
   );
 };
