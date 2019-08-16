@@ -18,11 +18,11 @@ export const getSmurfs = () => dispatch => {
     });
 };
 
-export const POST_SMURFS_START = "POST_CHARACTER_START";
-export const POST_SMURFS_SUCCESS = "POST_CHARACTER_SUCCESS";
-export const POST_SMURFS_FAILURE = "POST_CHARACTER_FAILURE";
+export const POST_SMURFS_START = "POST_SMURFS_START";
+export const POST_SMURFS_SUCCESS = "POST_SMURFS_SUCCESS";
+export const POST_SMURFS_FAILURE = "POST_SMURFS_FAILURE";
 
-export const addCharacter = value => dispatch => {
+export const addSmurf = value => dispatch => {
   dispatch({ type: POST_SMURFS_START });
 
   axios
