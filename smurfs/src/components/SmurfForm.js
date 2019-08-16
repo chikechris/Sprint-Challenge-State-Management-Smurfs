@@ -92,7 +92,7 @@ function SmurfForm(props) {
         />
         <input
           placeholder="age"
-          type="text"
+          type="number"
           value={smurf.age}
           name="age"
           onChange={handleChange}
